@@ -6,8 +6,8 @@ public class Main {
         public static void main(String[] args) {
             Student student = new Student("Sarinzhan","Kazbekov",20,"sarinzhankazbekov@gmail.com");
             System.out.println("До сериализации: \n" + student);
-            writeObject(student,"text.txt");
-            Student newStudent = readObject("student.ser");
+            writeObject(student,"text.ser");
+            Student newStudent = readObject("text.ser");
             System.out.println("Десериализованный: \n" + newStudent);
         }
         public static void writeObject(Student student,String path){
