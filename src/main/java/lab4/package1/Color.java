@@ -2,7 +2,7 @@ package lab4.package1;
 
     public interface Color {
         final static String RED = "red";
-        final  String ORANGE = "orange";
+        final static String ORANGE = "orange";
         final static String YELLOW = "yellow";
         final static String GREEN = "green";
         final static String BLUE = "blue";

@@ -14,5 +14,10 @@ public class A {
         public void method2() {
             System.out.println(this.toString() + "class A method2");
         }
+
+        @Override
+        public void method3() {
+            System.out.println(this.toString() + "class A method3");
+        }
     }
 }

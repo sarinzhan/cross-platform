@@ -4,14 +4,9 @@ import java.io.*;
 
 public class Main {
         public static void main(String[] args) {
-            System.out.println(args.length);
-            if(args.length < 1){
-                System.out.println("Вызов программы: java Main <имя файла>") ;
-                System.exit(-1);
-            }
             Student student = new Student("Sarinzhan","Kazbekov",20,"sarinzhankazbekov@gmail.com");
             System.out.println("До сериализации: \n" + student);
-            writeObject(student,args[0]);
+            writeObject(student,"text.txt");
             Student newStudent = readObject("student.ser");
             System.out.println("Десериализованный: \n" + newStudent);
         }

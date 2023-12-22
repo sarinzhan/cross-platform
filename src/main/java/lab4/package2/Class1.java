@@ -6,7 +6,7 @@ public class Class1 {
     protected Inner getInnerClass(){
         return new Inner();
     }
-    protected  class Inner implements Color{
+    protected  class Inner implements  Color{
         @Override
         public void printColor(String color) {
             System.out.println(color);

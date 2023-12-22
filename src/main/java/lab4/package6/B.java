@@ -26,6 +26,8 @@ public class B {
             if(uArr[i] != null){
                 uArr[i].method1();
                 uArr[i].method2();
+                uArr[i].method3();
+                System.out.println("\n");
             }
         }
     }
