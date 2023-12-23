@@ -26,7 +26,7 @@ public class Main {
         System.out.println(Color.WHITE);
         System.out.println(Color.BLACK);
         System.out.println(Color.BLUE);
-        System.out.println("interface null");
+        System.out.println("Через объект интерфейса");
         System.out.println(color.RED);
         System.out.println();
 
@@ -51,11 +51,6 @@ public class Main {
         Class3 class3 = new Class3();
         class3.test();
 
-        Map<Integer,Integer> map = new HashMap<>();
-
-
-
-
 
 
         List<A> listA = new ArrayList<>();
@@ -72,15 +67,9 @@ public class Main {
         b.remove(0);
         b.remove(1);
 
-        System.out.println("alter removing");
+        System.out.println("after removing");
         b.callAll();
-//
-//        int [] arr1 = {1,2,3};
-//        int [] arr2 = {2,3,4};
-//        int [] arr3 = new int[arr1.length + arr2.length];
-//        for(int i = 0,j=0;i<arr3.length;i++){
-//            arr3[j] = arr1[i];
-//        }
+
 
     }
 }
