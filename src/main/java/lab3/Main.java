@@ -10,6 +10,7 @@ public class Main {
         int [] arr2 = arr.clone();
         int [] arr3 = arr.clone();
         int [] arr4 = arr.clone();
+        int [] arr5 = arr.clone();
 
 
         long  startTime = System.currentTimeMillis();
@@ -32,6 +33,10 @@ public class Main {
         long endTime4 = System.currentTimeMillis();
         System.out.println("Время сортировки гномья " + (endTime4 - startTime4));
 
+        long  startTime5 = System.currentTimeMillis();
+        bubbleSort(arr5);
+        long endTime5 = System.currentTimeMillis();
+        System.out.println("Время сортировки пузьрком " + (endTime5 - startTime5));
     }
     public static int[] generateRandomArray(int size){
         int [] arr = new int[size];
