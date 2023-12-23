@@ -5,19 +5,32 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int size = 400000;
+        int size = 40000;
         int [] arr = generateRandomArray(size);
         int [] arr2 = arr.clone();
+        int [] arr3 = arr.clone();
+        int [] arr4 = arr.clone();
+
 
         long  startTime = System.currentTimeMillis();
         ShellSort(size,arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("Время сортировки Шелла " + (endTime - startTime));
+        System.out.println("Время сортировки Шелла: " + (endTime - startTime));
 
         long  startTime2 = System.currentTimeMillis();
         Arrays.sort(arr2);
         long endTime2 = System.currentTimeMillis();
-        System.out.println("Время сортировки Array.sort() " + (endTime2 - startTime2));
+        System.out.println("Время сортировки Array.sort(): " + (endTime2 - startTime2));
+
+        long  startTime3 = System.currentTimeMillis();
+        shakerSort(arr3);
+        long endTime3 = System.currentTimeMillis();
+        System.out.println("Время сортировки перемешиванием " + (endTime3 - startTime3));
+
+        long  startTime4 = System.currentTimeMillis();
+        gnomeSort(arr4);
+        long endTime4 = System.currentTimeMillis();
+        System.out.println("Время сортировки гномья " + (endTime4 - startTime4));
 
     }
     public static int[] generateRandomArray(int size){
@@ -44,5 +57,61 @@ public class Main {
                 }
                 arr[j] = tmp;
             }
+    }
+    public static void bubbleSort(int [] mas){
+        boolean isSorted = false;
+        int buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < mas.length-1; i++) {
+                if(mas[i] > mas[i+1]){
+                    isSorted = false;
+
+                    buf = mas[i];
+                    mas[i] = mas[i+1];
+                    mas[i+1] = buf;
+                }
+            }
+        }
+    }
+    public static void shakerSort(int [] arr) {
+        int buff;
+        int left = 0;
+        int right = arr.length - 1;
+        do {
+            for (int i = left; i < right; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    buff = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = buff;
+                }
+            }
+            right--;
+            for (int i = right; i > left; i--) {
+                if (arr[i] < arr[i - 1]) {
+                    buff = arr[i];
+                    arr[i] = arr[i - 1];
+                    arr[i - 1] = buff;
+                }
+            }
+            left++;
+        } while (left < right);
+    }
+    public static void gnomeSort(int[] array) {
+        int index = 0;
+
+        while (index < array.length) {
+            if (index == 0 || array[index] >= array[index - 1]) {
+                index++;
+            } else {
+                // Если текущий элемент меньше предыдущего, меняем их местами
+                int temp = array[index];
+                array[index] = array[index - 1];
+                array[index - 1] = temp;
+
+                // Возвращаемся на один шаг назад
+                index--;
+            }
+        }
     }
 }
