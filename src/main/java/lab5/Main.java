@@ -52,15 +52,18 @@ public class Main {
 
         //4 метод который использует итератор для перебора
         System.out.println("\n");
+        //демонстрация на списке машин
         printCollection(listCar);
+
         List<Student> studentList = new ArrayList<>();
         studentList.add(new Student("Sarinzhan",20));
         studentList.add(new Student("Asel",22));
         studentList.add(new Student("Adilhan",19));
         System.out.println("\n");
+        //демонстрация на другом списке у которого нету Comparabel и Comparator
         printCollection(studentList);
 
-        //5 Создать и заполнить два контейнера List<Integer> одного размера\
+        //5 Создать и заполнить два контейнера List<Integer> одного размера
         System.out.println("\n");
         List<Integer> list1 = new ArrayList<>();
         list1.add(1);
@@ -70,7 +73,7 @@ public class Main {
         list2.add(2);
         list2.add(4);
         list2.add(6);
-
+        //использовать ListIterator для чтения элементов...
         ListIterator<Integer> iterator = list1.listIterator();
         while(iterator.hasNext()){
             Integer el = iterator.next();

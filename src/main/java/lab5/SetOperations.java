@@ -19,7 +19,7 @@ public class SetOperations {
     public static Set<Integer> createDifference(Set<Integer> seta,Set<Integer> setb){
         //разность а/б
         Set<Integer> difference = new HashSet<>(seta);
-        difference.retainAll(setb);
+        difference.removeAll(setb);
         return difference;
     }
 
